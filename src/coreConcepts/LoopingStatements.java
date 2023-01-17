@@ -61,6 +61,7 @@ public class LoopingStatements
 		}
 	}
 	
+	//WAP to generate even numbers
 	@Test
 	public void applyColorToSteps_B2_Day1()
 	{
@@ -69,6 +70,7 @@ public class LoopingStatements
 			System.out.println("Apply RED color to step Day One :" + i);
 		}
 	}
+	//WAP to generate odd numbers
 	@Test
 	public void applyColorToSteps_B2_Day2()
 	{
