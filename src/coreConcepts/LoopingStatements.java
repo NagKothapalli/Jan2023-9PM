@@ -79,7 +79,7 @@ public class LoopingStatements
 			System.out.println("Apply GREEN color to step Day One :" + i);
 		}
 	}
-	
+	//Git Create Git Repository , Publish the Repo , Commit , Push , Clone ,  Pull|Get Latest
 	
 	
 	
