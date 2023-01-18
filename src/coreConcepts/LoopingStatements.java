@@ -80,10 +80,33 @@ public class LoopingStatements
 		}
 	}
 	//Git Create Git Repository , Publish the Repo , Commit , Push , Clone ,  Pull|Get Latest
+	@Test
+	public void findStudent() //rollNum = 25
+	{
+		for(int i=1;i<=100;i++)
+		{
+			System.out.println("Searching student :" + i);
+			if(i==25) //1==25->f  24==25->f 25==25->t
+			{ //true
+				System.out.println("Found the Student");
+				break;
+			}
+		}
+	}
 	
-	
-	
-	
+	//WAP to apply color to 10 floors and different color in each floor , we have 20 steps in each floor
+	@Test
+	public void applyColorToBuilding()
+	{
+		for(int i=1;i<=10;i++)//Nested for loop   // Outer Loop
+		{
+			System.out.println("*********************Apply Color to Floor Number :" + i);
+			for(int step=1;step<=20;step++) //Inner Loop
+			{
+				System.out.println("Apply Color to the Step :"+ step +"  in Floor Number :" + i);
+			}
+		}
+	}
 	
 	
 	
