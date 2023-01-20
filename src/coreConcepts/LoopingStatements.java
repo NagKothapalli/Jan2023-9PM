@@ -108,6 +108,123 @@ public class LoopingStatements
 		}
 	}
 	
+	//WAP to find given number is even or odd
+	        //if we divide a number with 2 and the reminder is 0 then that is a even number
+			// givenNumber / 2   -> Q   // givenNumber % 2  -> Reminder 
+			// 5/2 -> Q-> 2  , R -> 1 
+	@Test
+	public void isItEven_Test()
+	{
+		isItEven(22);
+		isItEven(25);
+	}
+	public void isItEven(int number)
+	{
+		System.out.println("Given Number :" + number);
+		//int rem = number % 2;
+		//if(rem == 0)
+		if((number % 2) == 0)	
+		{//true
+			//System.out.println("Given Number :" + number);
+			System.out.println("The Given Number is EVEN");
+			//System.out.println("YES");
+		}
+		else
+		{//false
+			//System.out.println("Given Number :" + number);
+			System.out.println("The Given Number is ODD");
+			//System.out.println("NO");
+		}
+ 	}
+	
+	@Test
+	public void isItOdd_Test()
+	{
+		isItOdd(22);
+		isItOdd(25);
+	}
+	public void isItOdd(int number)
+	{
+		System.out.println("Given Number :" + number);
+		int rem = number % 2;
+		if(!(rem == 0))
+		{//true
+			//System.out.println("Given Number :" + number);
+			System.out.println("The Given Number is ODD");
+			//System.out.println("YES");
+		}
+		else
+		{//false
+			//System.out.println("Given Number :" + number);
+			System.out.println("The Given Number is EVEN");
+			//System.out.println("NO");
+		}
+ 	}
+	//WAP to generate all even numbers in the range of  1 -  100
+	@Test
+	public void generateEvenNumbers()
+	{
+		for(int i=1;i<=100;i++)
+		{
+			//System.out.println("Given Number :" + i);
+			if((i % 2) == 0)
+			{
+				System.out.println("Given Number :" + i + " and it is Even Number :");
+			}
+			else
+			{
+				System.out.println("Given Number :" + i + " and it is not Even Number :");
+			}
+		}
+	}
+	@Test
+	public void generateEvenNumberSeries()
+	{
+		for(int i=1;i<=100;i++)
+		{
+			//System.out.println("Given Number :" + i);
+			if((i % 2) == 0)
+			{
+				//System.out.println( i );
+				System.out.print( i + " , " );
+			}
+			
+		}
+	}
+	@Test
+	public void sumOfNumbers()
+	{
+		int sum = 0; //1 3 6 10 15 21 28 36 45 55
+		for(int i=1;i<=100;i++)
+		{
+			sum = sum + i; // 0+1+2+3+4+5+6+7+8+9+10
+		}
+		System.out.println("Sum of first 100 numbers :" + sum);
+	}
+	
+	@Test
+	public void productOfNumbers()
+	{
+		long prod = 1; //1 2 6 24 ...............
+		for(int i=1;i<=20;i++)
+		{
+			prod = prod * i; // 1x1x2x3x4x5
+		}
+		System.out.println("Product of first 100 numbers :" + prod);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
