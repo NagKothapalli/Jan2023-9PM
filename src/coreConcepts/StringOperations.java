@@ -173,6 +173,33 @@ public class StringOperations
 		
 	}
 	
+	//split function in string class
+	@Test
+	public void splitOperation()
+	{
+		String a = "   Selenium-With-Csharp      ";
+		String[] myarr = a.trim().split(" ");
+		System.out.println("Todays Technology :" + myarr[2]);	
+		for(int i=0;i<myarr.length;i++)
+		{
+			System.out.println(myarr[i]);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
