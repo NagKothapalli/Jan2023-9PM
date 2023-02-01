@@ -75,8 +75,7 @@ public class ArraysConcept
 			 System.out.println(val2);
 		 }
 		 
-	}
-	
+	}	
 	@Test
 	public void string_DynamicArray()
 	{

@@ -1,28 +1,9 @@
-package coreConcepts;
+package inheritanceByExtends;
 
 import org.junit.Test;
 
-public class GmailWithJunit
+public class TestCases
 {
-	//************** Test Suites ************************
-	//BVT : Build Validation Test [ SMOKE ]
-	@Test
-	public void smokeSuite()
-	{
-		System.out.println("Test Suite : SMOKE");
-		composeAndSendAnEmail();
-		replyToAnEmail();
-	}
-	@Test
-	public void regressionSuite()
-	{
-		System.out.println("Test Suite : REGRESSION");
-		composeAndSendAnEmail();
-		replyToAnEmail();
-		forwardAnEmail();
-		deleteAnEmail();
-	}
-	
 	//********************** Test Cases ************************
 	@Test
 	public  void composeAndSendAnEmail() //method | function
