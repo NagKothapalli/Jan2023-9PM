@@ -1,12 +1,9 @@
-package multilevelInheritance;
+package heairachialInheritance;
+
 import org.junit.Test;
 
-public class TestCases extends ReusableComponents
+public class TestCases_M1 extends ReusableComponents
 {
-	/*
-	 * public void launchApplication() {
-	 * System.out.println("RC : Launch Application from Test Cases"); }
-	 */
 	//********************** Test Cases ************************
 	@Test
 	public  void composeAndSendAnEmail() //method | function
@@ -33,28 +30,5 @@ public class TestCases extends ReusableComponents
 		logoutFromApplication();
 		closeApplication();
 	}
-	@Test
-	public  void forwardAnEmail()
-	{
-		System.out.println("Test Case : Forward An Email ");
-		launchApplication(); //Test Steps - 1
-		loginToApplication();
-		open();
-		forward();
-		logoutFromApplication();
-		closeApplication();
-	}
-	@Test
-	public  void deleteAnEmail()
-	{
-		System.out.println("Test Case : Delete An Email ");
-		launchApplication(); //Test Steps - 1
-		loginToApplication();
-		open();
-		delete();
-		logoutFromApplication();
-		closeApplication();
-	}
-
 
 }

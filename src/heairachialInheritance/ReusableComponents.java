@@ -1,26 +1,26 @@
-package multilevelInheritance;
+package heairachialInheritance;
 
 public class ReusableComponents 
 {	
 	//******************** Reusable Components *********************
-	void launchApplication()
+	public void launchApplication()
 	{
-		System.out.println("RC : Launch Application");
+		System.out.println("RC : Launch Application from RC");
 	}
-	protected void loginToApplication()
-	{
-		System.out.println("RC : Login To Application");
-	}
-	protected void logoutFromApplication()
+	public void loginToApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
-	void closeApplication()
+	public void logoutFromApplication()
+	{
+		System.out.println("RC : Login To Application");
+	}
+	public void closeApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
 	
-	protected void compose()
+	public void compose()
 	{
 		System.out.println("RC : Compose Mail");
 	}
@@ -36,7 +36,7 @@ public class ReusableComponents
 	{
 		System.out.println("RC : Reply Mail");
 	}
-	void forward()
+	public void forward()
 	{
 		System.out.println("RC : Forward Mail");
 	}

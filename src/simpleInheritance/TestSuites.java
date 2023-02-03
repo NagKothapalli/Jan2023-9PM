@@ -1,4 +1,4 @@
-package inheritanceByExtends;
+package simpleInheritance;
 
 import org.junit.Test;
 //             child             parent|base

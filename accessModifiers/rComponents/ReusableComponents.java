@@ -1,9 +1,9 @@
-package multilevelInheritance;
+package rComponents;
 
 public class ReusableComponents 
 {	
 	//******************** Reusable Components *********************
-	void launchApplication()
+	protected void launchApplication()
 	{
 		System.out.println("RC : Launch Application");
 	}
@@ -15,7 +15,7 @@ public class ReusableComponents
 	{
 		System.out.println("RC : Login To Application");
 	}
-	void closeApplication()
+	public void closeApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
@@ -36,7 +36,7 @@ public class ReusableComponents
 	{
 		System.out.println("RC : Reply Mail");
 	}
-	void forward()
+	protected void forward()
 	{
 		System.out.println("RC : Forward Mail");
 	}

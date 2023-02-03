@@ -1,5 +1,7 @@
-package multilevelInheritance;
+package testScenarios;
 import org.junit.Test;
+
+import rComponents.ReusableComponents;
 
 public class TestCases extends ReusableComponents
 {

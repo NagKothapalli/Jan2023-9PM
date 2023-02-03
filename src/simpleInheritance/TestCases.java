@@ -1,4 +1,4 @@
-package inheritanceByExtends;
+package simpleInheritance;
 
 import org.junit.Test;
 
@@ -53,24 +53,24 @@ public class TestCases
 		closeApplication();
 	}
 	//******************** Reusable Components *********************
-	public void launchApplication()
+	private void launchApplication()
 	{
 		System.out.println("RC : Launch Application");
 	}
-	public void loginToApplication()
+	private void loginToApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
-	public void logoutFromApplication()
+	protected void logoutFromApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
-	public void closeApplication()
+	void closeApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
 	
-	public void compose()
+	protected void compose()
 	{
 		System.out.println("RC : Compose Mail");
 	}
@@ -78,7 +78,7 @@ public class TestCases
 	{
 		System.out.println("RC : Send Mail");
 	}
-	public void open()
+	private void open()
 	{
 		System.out.println("RC : Open Mail");
 	}
@@ -86,7 +86,7 @@ public class TestCases
 	{
 		System.out.println("RC : Reply Mail");
 	}
-	public void forward()
+	void forward()
 	{
 		System.out.println("RC : Forward Mail");
 	}
