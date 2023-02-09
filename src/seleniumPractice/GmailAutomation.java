@@ -1,6 +1,7 @@
 package seleniumPractice;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -36,7 +37,7 @@ public class GmailAutomation
 			System.out.println("Title Vlidation Failed");
 		}
 		System.out.println("Code after if condition");
-		
+		driver.findElement(By.name("identifier")).sendKeys("nag022");
 	}
 
 }
