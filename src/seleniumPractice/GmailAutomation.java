@@ -73,8 +73,34 @@ public class GmailAutomation
 		//driver.findElement(By.className("VfPpkd-Jh9lGc")).click();
 		//driver.findElement(By.linkText("Try again")).click();
 	}
-
+	@Test
+	public void forgotEmail()
+	{
+		//driver.findElement(By.tagName("button")).click();
+		driver.findElements(By.tagName("button")).get(0).click();
+	}
 	
+	@Test
+	public void learnMore()
+	{
+		//driver.findElement(By.tagName("a")).click();
+		//driver.findElements(By.tagName("a")).get(0).click();
+		//driver.findElement(By.linkText("Learn more")).click();
+		driver.findElement(By.partialLinkText("Learn")).click();
+	}
+	
+	@Test
+	public void createAccount()
+	{
+		//driver.findElement(By.tagName("button")).click();
+		driver.findElements(By.className("VfPpkd-vQzf8d")).get(2).click();
+	}
+	
+	@Test
+	public void help()
+	{
+		driver.findElement(By.linkText("Help")).click();
+	}
 	
 	
 	
