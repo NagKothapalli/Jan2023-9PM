@@ -26,6 +26,11 @@ public class GmailAutomation
 		driver = new ChromeDriver(); //1234
 	}
 	String expectedTitle = "Amail";
+	//WebDriver : get() , getTitle() , getWindowHandle(), getCurrentUrl(), findElement , findElements
+	//WebElement : click() , clear() , sendKeys() 
+	//By : id() , name , className , cssSlector , linkText , partialLinkText , tagName , xpath
+	
+	
 	@Before
 	public void launchApplication()
 	{
@@ -73,11 +78,48 @@ public class GmailAutomation
 		//driver.findElement(By.className("VfPpkd-Jh9lGc")).click();
 		//driver.findElement(By.linkText("Try again")).click();
 	}
+	//full xpath / absolute / fixed xpath / static xpath
+	//relative xpath : 
+	
+	// tagName[@attribute='value']
+	// tagName[@attribute1='value' and @attribute2='value']
+		// boy[@fname='Ram' and @fname='K']
+	// tagName[text()='value']
+	// tagName[@attribute1='value' and text()='value']
+	// select empName from EmployeeTable where empID=2343;
+
+	// tagName[@attribute1='value' or @attribute2='value']
+		// button[@color='red' or @color='green']
+
+	// *[@attribute='value']
+	// *[@attribute1='value' and @attribute2='value']
+	// *[text()='value']
+	// *[@attribute1='value' and text()='value']
+	// *[@attribute1='value' or @attribute2='value']
+
+	// tagName[contains(@attribute,'value')]
+	// tagName[contains(@attribute1,'value') and contains(@attribute2,'value')]
+	// tagName[contains(text(),'value')]
+	// tagName[contains(@attribute1,'value') and contains(text(),'value')]
+	// tagName[contains(@attribute1,'value') or contains(@attribute2,'value')]
+
+	//*[contains(@attribute,'value')]
+	//*[contains(@attribute1,'value') and contains(@attribute2,'value')]
+	//*[contains(text(),'value')]	
+	//*[contains(@attribute1,'value') and contains(text(),'value')]
+	//*[contains(@attribute1,'value')  or  contains(@attribute2,'value')]
+	
+	//parent child
 	@Test
 	public void forgotEmail()
 	{
 		//driver.findElement(By.tagName("button")).click();
-		driver.findElements(By.tagName("button")).get(0).click();
+		//driver.findElements(By.tagName("button")).get(0).click();		
+		///html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button
+	    //driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button")).click();
+		//driver.findElement(By.xpath("//button[@jsname='Cuz2Ue']")).click();
+		//driver.findElement(By.xpath("//button[text()='Forgot email?']")).click();
+		driver.findElement(By.xpath("//button[text()='Forgot email?' and @jsname='Cuz2Ue']")).click();
 	}
 	
 	@Test
@@ -86,7 +128,8 @@ public class GmailAutomation
 		//driver.findElement(By.tagName("a")).click();
 		//driver.findElements(By.tagName("a")).get(0).click();
 		//driver.findElement(By.linkText("Learn more")).click();
-		driver.findElement(By.partialLinkText("Learn")).click();
+		//driver.findElement(By.partialLinkText("Learn")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/span/div/div/a")).click();
 	}
 	
 	@Test
