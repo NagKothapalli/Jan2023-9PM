@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -36,8 +37,34 @@ public class ApsrtcAutomation
 		driver.switchTo().alert().accept();
 		driver.findElement(By.xpath("//input[@id='toPlaceName']")).sendKeys("GUNTUR");
 		actions.pause(Duration.ofSeconds(1)).sendKeys(Keys.ENTER).build().perform();
+		//open calendar , select date
+		driver.findElement(By.xpath("//input[@name='txtJourneyDate']")).click();
+		//driver.findElement(By.xpath("//a[text()='20']")).click();
+		selectJourneyDate("22");
 		driver.findElement(By.xpath("//input[@id='searchBtn']")).click();
 	}	
+	
+	public void selectJourneyDate(String JDate)
+	{
+		driver.findElement(By.xpath("//a[text()='"+JDate+"']")).click();
+		//       "//a[text()='"+JDate+"']"   - "//a[text()='22']"
+	}
+	
+	@Test
+	public void keyBordOperations()
+	{
+		WebElement fromPlace = driver.findElement(By.xpath("//input[@id='fromPlaceName']"));
+		Actions actions = new Actions(driver);
+		//actions.moveToElement(fromPlace).click().build().perform();
+		//actions.moveToElement(fromPlace).click().sendKeys("HYDERABAD").build().perform();
+		//actions.moveToElement(fromPlace).click().sendKeys("HYDERABAD").pause(Duration.ofSeconds(1)).sendKeys(Keys.ENTER).build().perform();
+		actions.moveToElement(fromPlace).click().sendKeys("HYDERABAD").doubleClick().contextClick().build().perform();
+	}
+	
+	
+	
+	
+	
 	
 	
 	
