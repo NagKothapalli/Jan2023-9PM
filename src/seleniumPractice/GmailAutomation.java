@@ -18,6 +18,7 @@ public class GmailAutomation
 	    //Current browser version is 90.0.4430.212 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe 
 	//org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='identifier']"}
 	//org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+	//org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 	WebDriver driver;//null
 	public GmailAutomation()
 	{
