@@ -12,12 +12,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ApsrtcAutomation
+public class ApsrtcAutomation //extends DriverUtilities
 {
 	//private static final String ArrayList = null;
 	WebDriver driver;//null
 	Actions actions;
+	DriverUtilities dUtils;
 	public ApsrtcAutomation()
 	{
 		System.out.println("Constructor of GmailAutomation");
@@ -25,6 +28,8 @@ public class ApsrtcAutomation
 		driver = new ChromeDriver(); //1234
 		actions = new Actions(driver);
 		driver.manage().window().maximize();
+		dUtils = new DriverUtilities(driver);//1234
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
 	//page object xpaths
 	    String homeXpath = "//a[@title='Home']";
@@ -41,11 +46,17 @@ public class ApsrtcAutomation
 		driver.get("https://www.apsrtconline.in/");
 	}
 	@Test
-	public void bookBusTicketold()
+	public void bookBusTicketold() 
 	{
 		System.out.println("Test Case : Book Bus Ticket");
+		//Thread.sleep(30000);  // 1000 ms = 1 s
+		//actions.pause(Duration.ofSeconds(30)).build().perform();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+		WebElement fromPalceObj = driver.findElement(By.xpath("//input[@id='fromPlaceName']"));
+		new WebDriverWait(driver,Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(fromPalceObj)).click();;
 		driver.findElement(By.xpath("//input[@id='fromPlaceName']")).sendKeys("HYDERABAD");
-		Actions actions = new Actions(driver);
+		//Actions actions = new Actions(driver);
 		actions.pause(Duration.ofSeconds(1)).sendKeys(Keys.ENTER).build().perform();
 		driver.findElement(By.xpath("//input[@id='searchBtn']")).click();
 		driver.switchTo().alert().accept();
@@ -61,13 +72,13 @@ public class ApsrtcAutomation
 	public void bookBusTicket()
 	{
 		System.out.println("Test Case : Book Bus Ticket");
-		enterText(fromPlaceXpath,"HYDERABAD");
-		clickEnter();
-		enterText(toPlaceXpath,"GUNTUR");
-		clickEnter();
-		clickElement(openCalendarXpath);
+		dUtils.enterText(fromPlaceXpath,"HYDERABAD");
+		dUtils.clickEnter();
+		dUtils.enterText(toPlaceXpath,"GUNTUR");
+		dUtils.clickEnter();
+		dUtils.clickElement(openCalendarXpath);
 		selectJourneyDate("22");
-		clickElement(searchButtonXpath);
+		dUtils.clickElement(searchButtonXpath);
 	}	
 	
 	public void selectJourneyDate(String JDate)
@@ -90,14 +101,14 @@ public class ApsrtcAutomation
 	@Test
 	public void multipleWindows()
 	{
-		clickElement("//a[@title='TimeTable / Track']");
-		clickElement("//a[text()='All services Time Table & Tracking']");
+		dUtils.clickElement("//a[@title='TimeTable / Track']");
+		dUtils.clickElement("//a[text()='All services Time Table & Tracking']");
 	}
 	@Test
 	public void multipleWindows_2()
 	{
-		clickElement(timeTableXpath);
-		clickElement(allServicesXpath);
+		dUtils.clickElement(timeTableXpath);
+		dUtils.clickElement(allServicesXpath);
 		Set<String> allwindows = driver.getWindowHandles();
 		ArrayList<String> windows = new ArrayList<String>(allwindows);
 		for(int i=0;i<windows.size();i++)
@@ -106,34 +117,17 @@ public class ApsrtcAutomation
 		}
 		System.out.println("Ttile of first window :" + driver.getTitle());
 		driver.switchTo().window(windows.get(1));
-		fixedWait(4);
+		dUtils.fixedWait(4);
 		System.out.println("Ttile of second window :" + driver.getTitle());
 		driver.close();
 		//driver.quit();
 		driver.switchTo().window(windows.get(0));
-		fixedWait(4);
-		clickElement(homeXpath);
+		dUtils.fixedWait(4);
+		dUtils.clickElement(homeXpath);
 		driver.quit();
 	}
 	
-	//****************Utilitiy functions **************
-	public void clickElement(String myxpath)
-	{
-		driver.findElement(By.xpath(myxpath)).click();
-	}
-	public void enterText(String myxpath,String text)
-	{
-		driver.findElement(By.xpath(myxpath)).sendKeys(text);
-	}	
-	public void clickEnter()
-	{		
-		actions.pause(Duration.ofSeconds(1)).sendKeys(Keys.ENTER).build().perform();
-	}
-	public void fixedWait(int timeInSeconds)
-	{
-		actions.pause(Duration.ofSeconds(timeInSeconds)).build().perform();
-	}
-	
+
 
 }
 
